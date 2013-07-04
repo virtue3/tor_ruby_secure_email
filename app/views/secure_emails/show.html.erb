@@ -1,0 +1,21 @@
+<p>
+  <strong>to:</strong>
+  <%= @secure_email.to %>
+</p>
+ 
+<p>
+  <strong>bcc:</strong>
+  <%= @secure_email.bcc %>
+</p>
+
+<p>
+  <strong>subject:</strong>
+  <%= @secure_email.subject %>
+</p>
+ 
+<p>
+  <strong>body:</strong>
+  <%= @secure_email.body %>
+</p>
+
+<%= link_to 'Back', secure_emails_path %>

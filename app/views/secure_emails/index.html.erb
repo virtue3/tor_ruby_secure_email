@@ -1,0 +1,22 @@
+<h1>Listing all secure emails</h1>
+ 
+<%= link_to 'New Email', new_secure_email_path %>
+
+<table>
+  <tr>
+    <th>To</th>
+    <th>Bcc</th>
+    <th>Subject</th>
+    <th>Body</th>
+  </tr>
+ 
+  <% @secure_email.each do |secure_email| %>
+    <tr>
+      <td><%= secure_email.to %></td>
+      <td><%= secure_email.bcc %></td>
+      <td><%= secure_email.subject %></td>
+      <td><%= secure_email.body %></td>
+      <td><%= link_to 'Show', secure_email %></td>
+    </tr>
+  <% end %>
+</table>

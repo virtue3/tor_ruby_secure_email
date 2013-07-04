@@ -1,0 +1,40 @@
+<h1>New Email!</h1>
+
+<%= form_for :secure_emails, url: secure_emails_path do |f| %>
+ <% if @secure_email.nil? == false and @secure_email.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@secure_email.errors.count, "error") %> prohibited
+      this email from being sent:</h2>
+    <ul>
+    <% @secure_email.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+	<p>
+		<%= f.label :to %><br>
+		<%= f.text_field :to %>
+	</p>
+
+	<p>
+		<%= f.label :bcc %><br>
+		<%= f.text_field :bcc %>
+	</p>
+
+	<p>
+		<%= f.label :subject %><br>
+		<%= f.text_field :subject %>
+	</p>
+
+	<p>
+		<%= f.label :body %><br>
+		<%= f.text_area :body %>
+	</p>
+
+	<p>
+		<%= f.submit "Send Secure Email" %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', secure_emails_path %>
